@@ -3,5 +3,5 @@
 
 bool IsEqual(float x, float y)
 {
-
+	return false;
 }

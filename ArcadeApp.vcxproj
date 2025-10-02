@@ -132,7 +132,7 @@
     <ClCompile Include="Vec2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utlis.h" />
+    <ClInclude Include="Utils.h" />
     <ClInclude Include="Vec2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
