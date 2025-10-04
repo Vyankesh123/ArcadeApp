@@ -128,12 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArcadeApp.cpp" />
-    <ClCompile Include="Utlis.cpp" />
-    <ClCompile Include="Vec2D.cpp" />
+    <ClCompile Include="Utils\Utlis.cpp" />
+    <ClCompile Include="Utils\Vec2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Vec2D.h" />
+    <ClInclude Include="Utils\Utlis.h" />
+    <ClInclude Include="Utils\Vec2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

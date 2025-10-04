@@ -24,18 +24,18 @@
     <ClCompile Include="ArcadeApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Vec2D.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\Utlis.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Utlis.cpp">
+    <ClCompile Include="Utils\Vec2D.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vec2D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Utils\Utlis.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Utils\Vec2D.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>

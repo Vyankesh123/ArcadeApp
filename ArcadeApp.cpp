@@ -5,9 +5,11 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-	Vec2D aVec;
+	Vec2D aVec(4,8);
 
-	cout << aVec << endl;
+	Vec2D resultVec = aVec * 3;
+
+	cout << resultVec << endl;
 
 	return 0;
 }
