@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="ArcadeApp.cpp" />
     <ClCompile Include="Graphics\Color.cpp" />
+    <ClCompile Include="Graphics\ScreenBuffer.cpp" />
     <ClCompile Include="Utils\Utlis.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\Color.h" />
+    <ClInclude Include="Graphics\ScreenBuffer.h" />
     <ClInclude Include="Utils\Utlis.h" />
     <ClInclude Include="Utils\Vec2D.h" />
   </ItemGroup>

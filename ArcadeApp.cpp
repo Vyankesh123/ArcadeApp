@@ -3,14 +3,12 @@
 #include <iostream>
 #include "Utils/Vec2D.h"
 #include "Graphics/Color.h"
+#include "Graphics/ScreenBuffer.h"
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
 
 using namespace std;
-
-void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
-size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
 
 
 int main(int argc, const char* argv[])
@@ -42,10 +40,14 @@ int main(int argc, const char* argv[])
 
     Color::InitColorFormat(pixelFormat);
 
-    
+    ScreenBuffer screenBuffer;
 
-    SetPixel(noptrWindowSurface,Color::Blue().GetPixelColor(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+    screenBuffer.Init(pixelFormat->format, noptrWindowSurface->w, noptrWindowSurface->h); // Createing msurface
 
+    screenBuffer.SetPixel(Color::Red(), SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2); // Set Pixel center one
+
+    SDL_BlitSurface(screenBuffer.GetSurface(), nullptr, noptrWindowSurface, nullptr);
+   
     SDL_UpdateWindowSurface(optrWindow);
 
     SDL_Event sdlEvent;
@@ -71,20 +73,4 @@ int main(int argc, const char* argv[])
     return 0;
 }
 
-void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y)
-{
-    SDL_LockSurface(noptrWindowSurface);
 
-    uint32_t* pixel = (uint32_t*)noptrWindowSurface->pixels;
-
-    size_t index = GetIndex(noptrWindowSurface, y, x);
-
-    pixel[index] = color;
-
-    SDL_UnlockSurface(noptrWindowSurface);
-}
-
-size_t GetIndex(SDL_Surface* noptrSurface, int r, int c)
-{
-    return r * noptrSurface->w + c;
-}
