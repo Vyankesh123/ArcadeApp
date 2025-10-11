@@ -42,6 +42,9 @@
     <ClCompile Include="Graphics\ScreenBuffer.cpp">
       <Filter>Source Files\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\Screen.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Utlis.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Graphics\ScreenBuffer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Screen.h">
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
