@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Vyankesh\source\repos\ArcadeApp\Utils;C:\Users\Vyankesh\source\repos\ArcadeApp\Graphics;C:\Users\Vyankesh\source\repos\ArcadeApp\SDL2\SDL2-2.28.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vyankesh\source\repos\ArcadeApp\Shapes;C:\Users\Vyankesh\source\repos\ArcadeApp\Utils;C:\Users\Vyankesh\source\repos\ArcadeApp\Graphics;C:\Users\Vyankesh\source\repos\ArcadeApp\SDL2\SDL2-2.28.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Vyankesh\source\repos\ArcadeApp\Utils;C:\Users\Vyankesh\source\repos\ArcadeApp\Graphics;C:\Users\Vyankesh\source\repos\ArcadeApp\SDL2\SDL2-2.28.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Vyankesh\source\repos\ArcadeApp\Shapes;C:\Users\Vyankesh\source\repos\ArcadeApp\Utils;C:\Users\Vyankesh\source\repos\ArcadeApp\Graphics;C:\Users\Vyankesh\source\repos\ArcadeApp\SDL2\SDL2-2.28.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,6 +143,7 @@
     <ClCompile Include="Graphics\Color.cpp" />
     <ClCompile Include="Graphics\Screen.cpp" />
     <ClCompile Include="Graphics\ScreenBuffer.cpp" />
+    <ClCompile Include="Shapes\Line2D.cpp" />
     <ClCompile Include="Utils\Utlis.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Graphics\Color.h" />
     <ClInclude Include="Graphics\Screen.h" />
     <ClInclude Include="Graphics\ScreenBuffer.h" />
+    <ClInclude Include="Shapes\Line2D.h" />
     <ClInclude Include="Utils\Utlis.h" />
     <ClInclude Include="Utils\Vec2D.h" />
   </ItemGroup>
