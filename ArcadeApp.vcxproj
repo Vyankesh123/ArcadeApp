@@ -144,6 +144,7 @@
     <ClCompile Include="Graphics\Screen.cpp" />
     <ClCompile Include="Graphics\ScreenBuffer.cpp" />
     <ClCompile Include="Shapes\Line2D.cpp" />
+    <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Utils\Utlis.cpp" />
     <ClCompile Include="Utils\Vec2D.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="Graphics\Screen.h" />
     <ClInclude Include="Graphics\ScreenBuffer.h" />
     <ClInclude Include="Shapes\Line2D.h" />
+    <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Utils\Utlis.h" />
     <ClInclude Include="Utils\Vec2D.h" />
   </ItemGroup>

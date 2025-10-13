@@ -54,6 +54,9 @@
     <ClCompile Include="Shapes\Line2D.cpp">
       <Filter>Source Files\Shapes</Filter>
     </ClCompile>
+    <ClCompile Include="Shapes\Shape.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Utlis.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Shapes\Line2D.h">
+      <Filter>Header Files\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes\Shape.h">
       <Filter>Header Files\Shapes</Filter>
     </ClInclude>
   </ItemGroup>

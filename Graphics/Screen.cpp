@@ -113,7 +113,7 @@ void Screen::Draw(const Line2D& line, const Color& color)
         int x1 = roundf(line.GetP1().GetX());
         int y1 = roundf(line.GetP1().GetY());
 
-        dx = x1 - x0;
+        dx = x1 - x0; // width and height of both dx and dy
         dy = y1 - y0;
 
         signed const char ix((dx > 0) - (dx < 0)); // evaluate to 1 or -1
