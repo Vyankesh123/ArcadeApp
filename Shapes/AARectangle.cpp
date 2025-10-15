@@ -1,0 +1,66 @@
+#include "AARectangle.h"
+#include "Utlis.h"
+#include <cmath>
+
+AARectangle::AARectangle(): AARectangle(Vec2D::Zero,Vec2D::Zero)
+{
+}
+
+AARectangle::AARectangle(const Vec2D& topLeft, unsigned int width, unsigned int height)
+{
+	mPoints.push_back(topLeft);
+	mPoints.push_back(Vec2D(topLeft.GetX() + width - 1, topLeft.GetY() + height - 1));
+}
+
+AARectangle::AARectangle(const Vec2D& topLeft, const Vec2D& bottomRight)
+{
+	mPoints.push_back(topLeft);
+	mPoints.push_back(bottomRight);
+}
+
+float AARectangle::GetWidth() const
+{
+	return GetBottomRightPoint().GetX() - GetTopLeftPoint().GetX() + 1 ;
+}
+
+float AARectangle::GetHeight() const
+{
+	return GetBottomRightPoint().GetY() - GetTopLeftPoint().GetY() + 1;;
+}
+
+void AARectangle::MoveTo(const Vec2D& position)
+{
+	float width = GetWidth();
+	float height = GetHeight();
+
+	SetTopLeftPoint(position);
+	SetBottomRightPoint(Vec2D(position.GetX() + width - 1, position.GetY() + height - 1));
+}
+
+Vec2D AARectangle::GetCenterPoint() const
+{
+	return Vec2D(GetTopLeftPoint().GetX() + GetWidth()/2.0f, GetTopLeftPoint().GetY() + GetHeight() / 2.0f);
+}
+
+bool AARectangle::Intersects(const AARectangle& otherReact) const
+{
+	return false;
+}
+
+bool AARectangle::ContainsPoint(const Vec2D& point) const
+{
+	bool withinX = point.GetX() >= GetTopLeftPoint().GetX() && point.GetX() <= GetBottomRightPoint().GetX();
+	bool withinY = point.GetY() >= GetTopLeftPoint().GetY() && point.GetY() <= GetBottomRightPoint().GetY();
+
+	return withinX && withinY;
+}
+
+AARectangle AARectangle::Inset(const AARectangle& rect, Vec2D& insets)
+{
+	return AARectangle(rect.GetTopLeftPoint() + insets,rect.GetWidth() - 2 * insets.GetX(), rect.GetHeight() - 2 * insets.GetY());
+}
+
+std::vector<Vec2D> AARectangle::GetPoints() const
+{
+	return std::vector<Vec2D>();
+}
