@@ -44,7 +44,10 @@ Vec2D AARectangle::GetCenterPoint() const
 
 bool AARectangle::Intersects(const AARectangle& otherReact) const
 {
-	return false;
+	return !(otherReact.GetBottomRightPoint().GetX() < GetTopLeftPoint().GetX() ||
+		   otherReact.GetTopLeftPoint().GetX() > GetBottomRightPoint().GetX() ||
+		   otherReact.GetBottomRightPoint().GetY() < GetTopLeftPoint().GetY() ||
+		   otherReact.GetTopLeftPoint().GetY() > GetBottomRightPoint().GetY() );
 }
 
 bool AARectangle::ContainsPoint(const Vec2D& point) const
@@ -62,5 +65,12 @@ AARectangle AARectangle::Inset(const AARectangle& rect, Vec2D& insets)
 
 std::vector<Vec2D> AARectangle::GetPoints() const
 {
-	return std::vector<Vec2D>();
+	std::vector<Vec2D> points;
+
+	points.push_back(mPoints[0]);
+	points.push_back(Vec2D(mPoints[1].GetX(), mPoints[0].GetY()));
+	points.push_back(mPoints[1]);
+	points.push_back(Vec2D(mPoints[0].GetX(), mPoints[1].GetY()));
+
+	return points;
 }

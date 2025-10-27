@@ -60,6 +60,9 @@
     <ClCompile Include="Shapes\Triangle.cpp">
       <Filter>Source Files\Shapes</Filter>
     </ClCompile>
+    <ClCompile Include="Shapes\AARectangle.cpp">
+      <Filter>Source Files\Shapes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Utlis.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files\Shapes</Filter>
     </ClInclude>
     <ClInclude Include="Shapes\Triangle.h">
+      <Filter>Header Files\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes\AARectangle.h">
       <Filter>Header Files\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
