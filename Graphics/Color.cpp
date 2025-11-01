@@ -8,6 +8,24 @@ void Color::InitColorFormat(const SDL_PixelFormat* format)
 	Color::mFormat = format;
 }
 
+Color Color::EvaluateMinueSourceAlpha(const Color& source, const Color& destination)
+{
+	//SourceRGB * sourceAlpha + Destination * (1 - sourceAlpha)
+	uint8_t alpha = source.GetAlpha();
+
+	float sourceAlpha = static_cast<float>(alpha) / 255.0f;
+	float destAlpha = 1.0f - sourceAlpha;
+
+	Color outColor;
+
+	outColor.SetAlpha(255);
+    outColor.SetRed(float(source.GetRed()) * sourceAlpha + destination.GetRed() * destAlpha);
+	outColor.SetGreen(float(source.GetGreen()) * sourceAlpha + destination.GetGreen() * destAlpha);
+	outColor.SetBlue(float(source.GetBlue()) * sourceAlpha + destination.GetBlue() * destAlpha);
+
+	return Color();
+}
+
 Color::Color(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
 	SetRGBA(r, g, b, a);
