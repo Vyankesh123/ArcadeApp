@@ -1,6 +1,10 @@
-#include "Screen.h"
+﻿#include "Screen.h"
 #include "Vec2D.h"
+#include "Utlis.h"
 #include "Line2D.h"
+#include "Triangle.h"
+#include "AARectangle.h"
+#include "Circle.h"
 #include <SDL.h>
 #include <cassert>
 #include <cmath>
@@ -165,6 +169,70 @@ void Screen::Draw(const Line2D& line, const Color& color)
             }
         }
     }
+}
+
+void Screen::Draw(const Triangle& triangle, const Color& color)
+{
+    Line2D p0p1 = Line2D(triangle.GetP0(), triangle.GetP1());
+    Line2D p1p2 = Line2D(triangle.GetP1(), triangle.GetP2());
+    Line2D p2p0 = Line2D(triangle.GetP2(), triangle.GetP0());
+
+    Draw(p0p1, color);
+    Draw(p1p2, color);
+    Draw(p2p0, color);
+}
+
+void Screen::Draw(const AARectangle& rect, const Color& color)
+{
+    std::vector<Vec2D> points = rect.GetPoints();
+
+    Line2D p0p1 = Line2D(points[0], points[1]);
+    Line2D p1p2 = Line2D(points[1], points[2]);
+    Line2D p2p3 = Line2D(points[2], points[3]);
+    Line2D p3p0 = Line2D(points[3], points[0]);
+
+    Draw(p0p1, color);
+    Draw(p1p2, color);
+    Draw(p2p3, color);
+    Draw(p3p0, color);
+}
+
+void Screen::Draw(const Circle& circle, const Color& color)
+{
+   /* static unsigned int NUM_CIRCLE_SEGMENTS = 30;
+    
+    float angle = TWO_PI / float(NUM_CIRCLE_SEGMENTS);
+
+    Vec2D p0 = Vec2D(circle.GetCenterPoint().GetX() + circle.GetRadius(), circle.GetCenterPoint().GetY());
+     Vec2D p1 = p0;
+
+    for (unsigned int i = 0; i < NUM_CIRCLE_SEGMENTS; ++i)
+    {
+        Line2D nextLineToDraw;
+        p1.Rotate(angle, circle.GetCenterPoint());
+        std::cout << "seg " << i << ": p0=(" << p0.GetX() << "," << p0.GetY()
+            << ") p1=(" << p1.GetX() << "," << p1.GetY() << ")\n";
+        nextLineToDraw.SetP1(p1);
+        nextLineToDraw.SetP0(p0);
+       
+        Draw(nextLineToDraw, color);
+        p0 = p1;
+    }*/
+
+    const unsigned SEG = 64;
+    const Vec2D c = circle.GetCenterPoint();
+    const float r = circle.GetRadius();
+    const float dθ = 2.0f * PI / float(SEG);
+
+    Vec2D p0(c.GetX() + r, c.GetY());
+    for (unsigned i = 1; i <= SEG; ++i) {
+        float θ = dθ * i;
+        Vec2D p1(c.GetX() + r * cosf(θ), c.GetY() + r * sinf(θ));
+        Line2D seg; seg.SetP0(p0); seg.SetP1(p1);
+        Draw(seg, color);        // must NOT clear/present inside
+        p0 = p1;
+    }
+
 }
 
 void Screen::ClearScreen()

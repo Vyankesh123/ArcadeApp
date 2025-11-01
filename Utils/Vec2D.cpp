@@ -69,6 +69,7 @@ Vec2D Vec2D::operator-(const Vec2D& vec) const
 	return Vec2D(mX - vec.mX, mY - vec.mY);
 }
 
+
 Vec2D& Vec2D::operator+=(const Vec2D& vec)
 {
 	

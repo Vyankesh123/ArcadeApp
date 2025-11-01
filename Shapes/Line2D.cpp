@@ -21,9 +21,29 @@ bool Line2D::operator==(const Line2D& line) const
 	return line.GetP0() == mP0 && line.GetP1() == mP1;
 }
 
+Vec2D Line2D::Midpoint() const
+{
+	return Vec2D((mP0.GetX() + mP1.GetX())/2.0f, (mP0.GetY() + mP1.GetY()) / 2.0f);
+}
+
 float Line2D::MinDistanceFrom(const Vec2D& p, bool limittoSegment) const
 {
 	return p.Distance(ClosestPoint(p,limittoSegment));
+}
+
+
+
+float Line2D::Slope() const
+{
+	float dx = mP1.GetX() - mP0.GetX();
+	if (fabsf(dx) < EPSILON)
+	{
+		return 0;
+	}
+
+	float dy = mP1.GetY() - mP0.GetY();
+
+	return dy / dx;
 }
 
 Vec2D Line2D::ClosestPoint(const Vec2D& p, bool limittoSegment) const
@@ -44,24 +64,6 @@ Vec2D Line2D::ClosestPoint(const Vec2D& p, bool limittoSegment) const
 	}
 
 	return mP0 + p0ToP1 * t;
-}
-
-Vec2D Line2D::Midpoint() const
-{
-	return Vec2D((mP0.GetX() + mP1.GetX())/2.0f, (mP0.GetY() + mP1.GetY()) / 2.0f);
-}
-
-float Line2D::Slope() const
-{
-	float dx = mP1.GetX() - mP0.GetX();
-	if (fabsf(dx) < EPSILON)
-	{
-		return 0;
-	}
-
-	float dy = mP1.GetY() - mP0.GetY();
-
-	return dy / dx;
 }
 
 float Line2D::Length() const

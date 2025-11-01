@@ -31,8 +31,10 @@ public:
 
     Vec2D operator+(const Vec2D& vec) const;
     Vec2D operator-(const Vec2D& vec) const;
+
     Vec2D& operator+=(const Vec2D& vec);
     Vec2D& operator-=(const Vec2D& vec);
+    
 
     float Mag2() const;
     float Mag() const;
