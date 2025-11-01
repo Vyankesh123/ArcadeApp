@@ -50,7 +50,7 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
     {
        mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
        
-       SDL_PixelFormat* pixelFormat = mnoptrWindowSurface->format;
+       SDL_PixelFormat* pixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
 
         Color::InitColorFormat(pixelFormat);
 

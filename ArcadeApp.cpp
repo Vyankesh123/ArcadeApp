@@ -31,7 +31,7 @@ int main(int argc, const char* argv[])
 
     theScreen.Draw(triangle, Color::Red(),true, Color::Red());
     theScreen.Draw(rect, Color::Blue(),true,Color::Blue());
-   // theScreen.Draw(circle, Color(0,255,0,150), true, Color(0, 255, 0, 150));
+    theScreen.Draw(circle, Color(0,200,0,100), true, Color(0, 200, 0, 100));
 
    // theScreen.Draw(line, Color::White());
     //theScreen.Draw(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, Color::Yellow());
