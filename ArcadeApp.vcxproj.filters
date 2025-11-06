@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Shapes">
       <UniqueIdentifier>{e7239c16-947b-420e-84b1-6d19e5f5c994}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\App">
+      <UniqueIdentifier>{146340fb-c643-4602-85b6-5add88facbaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App">
+      <UniqueIdentifier>{030eb75f-2eca-4817-91ee-5cccfeadb2e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArcadeApp.cpp">
@@ -66,6 +72,9 @@
     <ClCompile Include="Shapes\Circle.cpp">
       <Filter>Source Files\Shapes</Filter>
     </ClCompile>
+    <ClCompile Include="App\App.cpp">
+      <Filter>Source Files\App</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\Utlis.h">
@@ -97,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Shapes\Circle.h">
       <Filter>Header Files\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="App\App.h">
+      <Filter>Header Files\App</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
